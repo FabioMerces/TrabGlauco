@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<meta charset="UTF-8"/>
+	</h:head>
+	<h:body>
+	
+	<h:form id="formAluno">
+		<p:panelGrid columns="2">
+			<p:outputLabel value="Nome"/>
+			<p:inputText value="#{alunoMB.aluno.nome}"/>
+			<p:outputLabel value="RA"/>
+			<p:inputText value="#{alunoMB.aluno.RA}"/>
+			<p:outputLabel value="Faltas"/>
+			<p:inputText value="#{alunoMB.aluno.faltas}"/>
+			<p:outputLabel value="Nota"/>
+			<p:inputText value="#{alunoMB.aluno.nota}"/>
+		</p:panelGrid>
+		<p:commandButton value="Salvar"
+						action="#{alunoMB.salvar()}"
+						update=":formAluno"
+		/>
+	
+	<p:dataTable value="#{alunoMB.alunos}" var="aux">
+		<p:column headerText="Nome">
+			<h:outputText value ="#{aux.nome}"></h:outputText>
+		</p:column>
+		
+		<p:column headerText="RA">
+			<h:outputText value ="#{aux.RA}"></h:outputText>
+		</p:column>
+		
+		<p:column headerText="Faltas">
+			<h:outputText value ="#{aux.faltas}"></h:outputText>
+		</p:column>
+		
+		<p:column headerText="Nota">
+			<h:outputText value ="#{aux.nota}"></h:outputText>
+		</p:column>
+	</p:dataTable>
+		
+	</h:form>
+	</h:body>
+</html>
