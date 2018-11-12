@@ -1,6 +1,13 @@
 package Entidades;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+
 public class Aluno {
+	
+	@Id
 	private int RA;
 	private int faltas;
 	private String nome;
